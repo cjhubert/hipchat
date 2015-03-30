@@ -90,12 +90,12 @@ func (c *Client) Messages() <-chan *Message {
 
 // Rooms returns a channel of Room slices
 func (c *Client) Rooms() <-chan []*Room {
-	return <-c.receivedRooms
+	return c.receivedRooms
 }
 
 // Users returns a channel of User slices
 func (c *Client) Users() <-chan []*User {
-	return <-c.receivedUsers
+	return c.receivedUsers
 }
 
 // Status sends a string to HipChat to indicate whether the client is available
